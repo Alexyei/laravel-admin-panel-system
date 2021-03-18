@@ -36,8 +36,12 @@ class RegisterController extends Controller
         ]);
 
 
+
         Mail::to($tempUser->email)->send(new VerifyEmail($tempUser));
-        return redirect()->back()->with('success', 'Please click on the link sent to your email');
+        return response() ->json([
+            'message'=>'Please click on the link sent to your email',
+            'status'=>'success',
+        ]);
     }
 
     // подтверждение регистрации

@@ -35,12 +35,20 @@ $(document).ready(function () {
                         // alert(json.status + ' - ' + json.message);
                     if (result.message)
                         modalAlertNotification(result.message,result.status);
-                        if (result.redirect)
+                    if (result.redirect)
                             window.location.href = result.redirect;
                     // }
                 },
                 error: function (result){
-                    modalAlertNotification(Object.values(result.responseJSON.errors)[0][0],"error");
+                    result = result.responseJSON;
+                    console.log(result);
+                    console.log(result.status);
+                    // ошибки валидации
+                    if (result.errors)
+
+                        modalAlertNotification(Object.values(result.errors)[0][0],"error");
+                    else
+                        modalAlertNotification(result.message,result.status);
                 }
             }).always(function(){
 				btn.classList.toggle("load");

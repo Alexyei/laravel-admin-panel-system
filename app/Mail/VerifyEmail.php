@@ -22,7 +22,7 @@ class VerifyEmail extends Mailable
     {
         $this->user = $user;
         $this->link = URL::temporarySignedRoute(
-            'confirm', now()->addHours(1), ['verifyUser' => $user->id]
+            'confirm', now()->addHours(1), ['verifyuser' => $user->id]
         );
     }
 

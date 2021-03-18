@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('main');
 
+
+
 Route::get('/enter/{user:login?}', [LoginController::class,'enter']);
 Route::post('/login', [LoginController::class,'login'])->name('login');
 Route::get('/logout', [LoginController::class,'logout'])->middleware('auth');

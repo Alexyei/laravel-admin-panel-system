@@ -16,7 +16,7 @@ class LoginController extends Controller
     // общая точка входа (sign in, sign up, reset password)
     public function enter(User $user)
     {
-        return view('auth.enter');
+        return view('auth.enter',['user'=>$user]);
     }
 
     // войти
@@ -30,12 +30,13 @@ class LoginController extends Controller
 
         if(Auth::attempt(['login'=>$request->login,'password'=>$request->password])){
             //return redirect(route('main'))->with('success', 'Logged In Successfully');
-            return response() ->json(['code'=>200,'redirect'=>route('main')]);
+            return response() ->json(['redirect'=>route('main')]);
         }
         else{
-            return redirect()->back()->withErrors([
-                'error' => Lang::get('auth.failed'),
-            ]);
+            return response()->json([
+                'message' => Lang::get('auth.failed'),
+                'status' => 'error'
+            ], 400);
         }
     }
 
