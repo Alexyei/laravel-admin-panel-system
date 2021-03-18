@@ -16,12 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('main');
 
-Route::get('/enter', [LoginController::class,'enter']);
-Route::post('/login', [LoginController::class,'login']);
+Route::get('/enter/{user:login?}', [LoginController::class,'enter']);
+Route::post('/login', [LoginController::class,'login'])->name('login');
 Route::get('/logout', [LoginController::class,'logout'])->middleware('auth');
 
 //route implicit bind
-Route::post('/register/{user:login?}', [LoginController::class,'create']);
-Route::post('/confirm/{verifyUser}', [LoginController::class,'create'])->name('confirm')->middleware('signed');
+Route::post('/register/{user:login?}', [LoginController::class,'create'])->name('register');
+Route::get('/confirm/{verifyUser}', [LoginController::class,'create'])->name('confirm')->middleware('signed');

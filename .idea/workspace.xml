@@ -1,7 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14c9e101-c5da-4aa0-b50b-ac5a6b2808a3" name="Default Changelist" comment="" />
+    <list default="true" id="14c9e101-c5da-4aa0-b50b-ac5a6b2808a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/fonts/Abel/Abel-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Abel/Abel_rus.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Abel/Abel_rus.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Abel/OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Anton/Anton-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Anton/OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Champagne/Champagne.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Champagne/Champagne.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Josefin_Sans/JosefinSans-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Josefin_Sans/JosefinSans-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Josefin_Sans/JosefinSans-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Josefin_Sans/JosefinSans-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Josefin_Sans/JosefinSans-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Josefin_Sans/JosefinSans-RegularItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Josefin_Sans/JosefinSans-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Josefin_Sans/JosefinSans-SemiBoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Josefin_Sans/JosefinSans-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Josefin_Sans/JosefinSans-ThinItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Josefin_Sans/OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Lexend_Deca/LexendDeca-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Lexend_Deca/OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-BlackItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-ExtraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-ExtraLightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-MediumItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-RegularItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-SemiBoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/Livvic-ThinItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Livvic/OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Oswald/OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Oswald/Oswald-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Oswald/Oswald-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Raleway/OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Raleway/Raleway-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/TT/TTNormsPro-Regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/TT/TTNormsPro-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/TT/TTNormsPro-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/auth/log.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/auth/register.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/Jquery3.4.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/auth/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/form/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/popup/popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/spinner/spinner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/auth/auth.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/popup/popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/confirm.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/enter.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/auth.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/VerifyEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/VerifyEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/VerifyUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/VerifyUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_17_161740_create_verify_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_17_161740_create_verify_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mail/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mail/confirm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,11 +228,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/styles" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\laravel-enter-system\public\styles" />
+      <recent name="C:\OpenServer\domains\laravel-enter-system\public\scripts\form" />
+      <recent name="C:\OpenServer\domains\laravel-enter-system\public\scripts\spinner" />
+      <recent name="C:\OpenServer\domains\laravel-enter-system\public\styles\popup" />
+      <recent name="C:\OpenServer\domains\laravel-enter-system\public\scripts\popup" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OpenServer\domains\laravel-enter-system\app\Http\Controllers\Auth" />
       <recent name="C:\OpenServer\domains\laravel-enter-system\app\Http\Controllers" />
@@ -159,11 +260,24 @@
       <option name="presentableId" value="Default" />
       <updated>1615997785717</updated>
       <workItem from="1615997787026" duration="356000" />
-      <workItem from="1615998269503" duration="3481000" />
+      <workItem from="1615998269503" duration="4139000" />
+      <workItem from="1616049770041" duration="13549000" />
     </task>
+    <task id="LOCAL-00001" summary="Init">
+      <created>1616001842689</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616001842689</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init" />
   </component>
 </project>

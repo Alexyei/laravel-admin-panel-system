@@ -1,0 +1,60 @@
+
+/*  font-family: Abel  */
+/*@font-face {*/
+/*    font-family: Abel;*/
+/*    src: url('../fonts/Abel/Abel-Regular.ttf');*/
+/*}*/
+
+@font-face {
+    font-family: Abel;
+    src: url('../fonts/Abel/Abel_rus.woff2') format('woff2'),
+    url('../fonts/Abel/Abel_rus.ttf') format('truetype');
+}
+
+/*  font-family: Anton  */
+/*@font-face {*/
+/*    font-family: Anton;*/
+/*    src: url('../fonts/Anton/Anton-Regular.ttf');*/
+/*}*/
+
+@font-face {
+    font-family: Oswald;
+    src: url('../fonts/Oswald/Oswald-Regular.woff2') format('woff2'),
+    url('../fonts/Oswald/Oswald-Regular.ttf') format('truetype');
+}
+
+/*  font-family: Josefin  */
+/*@font-face {*/
+/*    font-family: Josefin;*/
+/*    src: url('../fonts/Josefin_Sans/JosefinSans-Regular.ttf');*/
+/*}*/
+
+@font-face {
+    font-family: Champagne;
+    src: url('../fonts/Champagne/Champagne.woff2') format('woff2'),
+    url('../fonts/Champagne/Champagne.ttf') format('truetype');
+}
+
+/*  font-family: Lexend  */
+/*@font-face {*/
+/*    font-family: Lexend;*/
+/*    src: url('../fonts/Lexend_Deca/LexendDeca-Regular.ttf');*/
+/*}*/
+
+@font-face {
+    font-family: TT;
+    src: url('../fonts/TT/TTNormsPro-Regular.woff2') format('woff2'),
+        url('../fonts/TT/TTNormsPro-Regular.ttf') format('truetype');
+}
+
+/*  font-family: Livvic  */
+/*@font-face {*/
+/*    font-family: Livvic;*/
+/*    src: url('../fonts/Livvic/Livvic-Regular.ttf');*/
+/*}*/
+
+@font-face {
+    font-family: Raleway;
+    src: url('../fonts/Raleway/Raleway-regular.woff2') format('woff2'),
+    url('../fonts/Raleway/Raleway-regular.ttf') format('truetype');
+}

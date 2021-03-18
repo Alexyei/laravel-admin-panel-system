@@ -6,11 +6,13 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\URL;
 
 class VerifyEmail extends Mailable
 {
     use Queueable, SerializesModels;
     public $user;
+    public $link;
     /**
      * Create a new message instance.
      *
@@ -19,6 +21,9 @@ class VerifyEmail extends Mailable
     public function __construct($user)
     {
         $this->user = $user;
+        $this->link = URL::temporarySignedRoute(
+            'confirm', now()->addHours(1), ['user' => $user->id]
+        );
     }
 
     /**

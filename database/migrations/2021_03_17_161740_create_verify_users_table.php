@@ -15,10 +15,10 @@ class CreateVerifyUsersTable extends Migration
     {
         Schema::create('verify_users', function (Blueprint $table) {
             $table->id();
-            $table->string('login');
+            $table->string('login', 20);
             $table->string('email');
-            $table->string('password');
-            $table->unsignedBigInteger('refer');
+            $table->string('password', 60);
+            $table->unsignedBigInteger('refer')->default(0);
             $table->timestamps();
         });
     }

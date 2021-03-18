@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 
 class LoginController extends Controller
 {
@@ -14,14 +16,29 @@ class LoginController extends Controller
     }
 
     // войти
-    public function login()
+    public function login(Request $request)
     {
-        return view('auth.login');
+        //'bail' - не првоерять после первой ошибки
+        $request->validate([
+            'login' => ['bail','required','alpha_dash','min:3','max:20'],
+            'password' => ['bail','required','min:5','max:30','alpha_dash'],
+        ]);
+
+        if(Auth::attempt(['login'=>$request->login,'password'=>$request->password])){
+            //return redirect(route('main'))->with('success', 'Logged In Successfully');
+            return response() ->json(['code'=>200,'redirect'=>route('main')]);
+        }
+        else{
+            return redirect()->back()->withErrors([
+                'error' => Lang::get('auth.failed'),
+            ]);
+        }
     }
 
     // выйти
     public function logout()
     {
-        return view('auth.login');
+        Auth::logout();
+        return redirect()->back();
     }
 }
