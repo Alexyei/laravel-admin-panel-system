@@ -24,17 +24,19 @@ $(document).ready(function () {
                 processData: false,
                 success: function (result) {
 
-                    console.log("success ajax")
-                    json = jQuery.parseJSON(result);
+                    console.log("success ajax");
+                    console.log(result);
+                    // json = jQuery.parseJSON(result);
                     // где используеться json.url? в каких экшенах
                     // view location
                     // if (json.url) {
                     //     window.location.href = '/' + json.url;
                     // } else {
                         // alert(json.status + ' - ' + json.message);
-                        modalAlertNotification(json.message,json.status);
-                        if (json.redirect)
-                            window.location.href = '/' + json.redirect;
+                    if (result.message)
+                        modalAlertNotification(result.message,result.status);
+                        if (result.redirect)
+                            window.location.href = result.redirect;
                     // }
                 },
                 error: function (result){

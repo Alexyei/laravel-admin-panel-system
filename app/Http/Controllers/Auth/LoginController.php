@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers\Auth;;
 
+use App\Mail\VerifyEmail;
+use App\Models\User;
+use App\Models\VerifyUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Mail;
 
 class LoginController extends Controller
 {
     // общая точка входа (sign in, sign up, reset password)
-    public function enter()
+    public function enter(User $user)
     {
         return view('auth.enter');
     }

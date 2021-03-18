@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
            // $table->rememberToken();
             $table->unsignedBigInteger('refer')->default(0);
-            $table->string('role',50)->default('user'); //admin
+            $table->string('role',20)->default('user'); //admin
 
             $table->timestamps();
         });

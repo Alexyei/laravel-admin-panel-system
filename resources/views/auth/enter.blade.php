@@ -40,7 +40,7 @@
             </div>
             <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Повторите пароль"  name="confirm-password"/>
+                <input type="password" placeholder="Повторите пароль"  name="password_confirmation"/>
             </div>
             <button type="submit" class="btn solid long">
                 <i class="fas fa-spinner fa-spin del"></i><span class="text">Зарегистрироваться</span>

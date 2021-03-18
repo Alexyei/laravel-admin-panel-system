@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,5 +24,5 @@ Route::post('/login', [LoginController::class,'login'])->name('login');
 Route::get('/logout', [LoginController::class,'logout'])->middleware('auth');
 
 //route implicit bind
-Route::post('/register/{user:login?}', [LoginController::class,'create'])->name('register');
-Route::get('/confirm/{verifyUser}', [LoginController::class,'create'])->name('confirm')->middleware('signed');
+Route::post('/register/{user:login?}', [RegisterController::class,'create'])->name('register');
+Route::get('/confirm/{verifyuser}', [RegisterController::class,'store'])->name('confirm')->middleware('signed');
