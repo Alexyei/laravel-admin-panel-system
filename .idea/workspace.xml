@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14c9e101-c5da-4aa0-b50b-ac5a6b2808a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/popup/popup.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/VerifyEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/VerifyEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/form/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/form/form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/confirm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/enter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/enter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/popup/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/popup/popup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +177,9 @@
       <workItem from="1615997787026" duration="356000" />
       <workItem from="1615998269503" duration="4139000" />
       <workItem from="1616049770041" duration="13549000" />
-      <workItem from="1616076659794" duration="8766000" />
+      <workItem from="1616076659794" duration="9390000" />
+      <workItem from="1616091813676" duration="20000" />
+      <workItem from="1616136206606" duration="4791000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1616001842689</created>
@@ -194,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616081572780</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="second test register">
+      <created>1616090461339</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616090461339</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +211,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init" />
     <MESSAGE value="first test register" />
-    <option name="LAST_COMMIT_MESSAGE" value="first test register" />
+    <MESSAGE value="second test register" />
+    <option name="LAST_COMMIT_MESSAGE" value="second test register" />
   </component>
 </project>

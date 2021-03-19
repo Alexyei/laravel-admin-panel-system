@@ -1,4 +1,4 @@
-function modalAlertNotification(message, status="error", header="") {
+function modalAlertNotification(message, status="error",redirect ="", header="") {
 
     //$('.modal .title').html(status);
     //$('.modal .desc').html(message);
@@ -32,10 +32,12 @@ function modalAlertNotification(message, status="error", header="") {
         // });
 
         $("#dismiss-popup-btn").off('click').on('click',function(){
-            // console.log(200);
+            console.log(200);
             // console.log(300);
             document.querySelector(".bg-modal-popup").classList.toggle("popup-modal-visible");
             document.querySelector(".popup").classList.toggle("active");
+            if(redirect)
+                window.location.href = redirect;
             resolve();
         });
     });

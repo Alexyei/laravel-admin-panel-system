@@ -28,10 +28,11 @@ class RegisterController extends Controller
 //            'confirm_password' => ['bail','required','min:5','max:30','alpha_dash']
         ]);
 
+
         $tempUser = VerifyUser::create([
             'login' => $request->login,
             'email' => $request->email,
-            'refer' => (!isEmpty($user))?$user->id:0,
+            'refer' => $user->id??0,
             'password' => bcrypt($request->password),
         ]);
 
@@ -47,12 +48,18 @@ class RegisterController extends Controller
     // подтверждение регистрации
     public function store(VerifyUser $verifyuser)
     {
-        $user = $verifyuser;
-        if (User::where('email', $user->email)->first())
-            return view('auth.confirm',['error'=>'Пользователь с таким email уже зарегистрирован']);
-        if (User::where('login', $user->login)->first())
-            return view('auth.confirm',['error'=>'Пользователь с таким именем уже зарегистрирован']);
 
+        $user = $verifyuser;
+       $refer = $user->refer?User::find($user->refer)->login:'';
+
+       // $refer = $refer?$refer->login:null;
+       // dd($user->refer);
+        if (User::where('email', $user->email)->first())
+            //return view('auth.enter',['error'=>'Пользователь с таким email уже зарегистрирован']);
+        return view('popup.popup',['status'=>'error','message'=>'Пользователь с таким email уже зарегистрирован','redirect'=>route('enter',$refer)]);
+        if (User::where('login', $user->login)->first())
+            //return view('auth.enter',['error'=>'Пользователь с таким именем уже зарегистрирован']);
+            return view('popup.popup',['status'=>'error','message'=>'Пользователь с таким именем уже зарегистрирован','redirect'=>route('enter',$refer)]);
        // dd($verifyuser);
         User::create([
             'login' => $user->login,

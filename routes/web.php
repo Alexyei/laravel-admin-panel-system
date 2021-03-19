@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,12 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    dd(User::find(100)->login);
     return view('welcome');
+    //return view('popup.popup',['status'=>'warning','message'=>'привет мир','redirect'=>route('enter')]);
 })->name('main');
 
 
 
-Route::get('/enter/{user:login?}', [LoginController::class,'enter']);
+Route::get('/enter/{user:login?}', [LoginController::class,'enter'])->name('enter');
 Route::post('/login', [LoginController::class,'login'])->name('login');
 Route::get('/logout', [LoginController::class,'logout'])->middleware('auth');
 

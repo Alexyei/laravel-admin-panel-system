@@ -34,9 +34,9 @@ $(document).ready(function () {
                     // } else {
                         // alert(json.status + ' - ' + json.message);
                     if (result.message)
-                        modalAlertNotification(result.message,result.status);
-                    if (result.redirect)
-                            window.location.href = result.redirect;
+                        modalAlertNotification(result.message,result.status,result.redirect);
+                    else if (result.redirect)
+                          window.location.href = result.redirect;
                     // }
                 },
                 error: function (result){
@@ -47,8 +47,11 @@ $(document).ready(function () {
                     if (result.errors)
 
                         modalAlertNotification(Object.values(result.errors)[0][0],"error");
-                    else
-                        modalAlertNotification(result.message,result.status);
+                    else if (result.message)
+                        modalAlertNotification(result.message,result.status,result.redirect);
+                    else if (result.redirect)
+                    window.location.href = result.redirect;
+
                 }
             }).always(function(){
 				btn.classList.toggle("load");

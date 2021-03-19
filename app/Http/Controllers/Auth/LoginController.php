@@ -16,6 +16,7 @@ class LoginController extends Controller
     // общая точка входа (sign in, sign up, reset password)
     public function enter(User $user)
     {
+        //user нужен для реферальной ссылки
         return view('auth.enter',['user'=>$user]);
     }
 
