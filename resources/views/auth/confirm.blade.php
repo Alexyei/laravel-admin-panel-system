@@ -19,10 +19,10 @@
                     <i class="fas fa-spinner fa-spin del"></i><span class="text">Войти</span>
                 </button>
                 <a class="social-text" href="#">Забыли пароль?</a>
-                <div class="brand-container"><a href="/" class="brand">Мой блог</a></div>
+                <div class="brand-container"><a href="{{route('main')}}" class="brand">Мой блог</a></div>
             </form>
 
-            <form autocomplete="off" action="/account/recovery/" method="post" class="sign-up-form reset hidden">
+            <form autocomplete="off" action="{{route('recovery')}}" method="post" class="sign-up-form reset hidden">
                 @csrf
                 <h2 class="title">Восстановление доступа</h2>
                 <div class="input-field">
@@ -33,7 +33,7 @@
                 <button type="submit" class="btn solid">
                     <i class="fas fa-spinner fa-spin del"></i><span class="text">Отправить</span>
                 </button>
-                <div class="brand-container"><a href="/" class="brand">Мой блог</a></div>
+                <div class="brand-container"><a href="{{route('main')}}" class="brand">Мой блог</a></div>
             </form>
         </div>
     </div>

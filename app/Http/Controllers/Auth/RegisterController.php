@@ -40,7 +40,7 @@ class RegisterController extends Controller
 
         Mail::to($tempUser->email)->send(new VerifyEmail($tempUser));
         return response() ->json([
-            'message'=>'Please click on the link sent to your email',
+            'message'=>'Пожалуйста перейдите по ссылке отправленной на ваш email',
             'status'=>'success',
         ]);
     }

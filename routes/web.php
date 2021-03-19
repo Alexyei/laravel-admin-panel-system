@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    dd(User::find(100)->login);
     return view('welcome');
     //return view('popup.popup',['status'=>'warning','message'=>'привет мир','redirect'=>route('enter')]);
 })->name('main');
@@ -31,3 +31,6 @@ Route::get('/logout', [LoginController::class,'logout'])->middleware('auth');
 //route implicit bind
 Route::post('/register/{user:login?}', [RegisterController::class,'create'])->name('register');
 Route::get('/confirm/{verifyuser}', [RegisterController::class,'store'])->name('confirm')->middleware('signed');
+
+Route::post('/recovery', [ResetPasswordController::class,'recovery'])->name('recovery');
+Route::get('/reset/{user:login}', [ResetPasswordController::class,'reset'])->name('reset')->middleware('signed');

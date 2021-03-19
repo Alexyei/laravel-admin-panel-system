@@ -21,7 +21,7 @@
                 </button>
                 <!--                </span>-->
                 <a class="social-text" href="#">Забыли пароль?</a>
-                <div class="brand-container"><a href="/" class="brand">Мой блог</a></div>
+                <div class="brand-container"><a href="{{route('main')}}" class="brand">Мой блог</a></div>
             </form>
             <form autocomplete="off" action="{{route('register',(isset($user->id))?$user->login:'')}}"
                   method="post" class="sign-up-form registration">
@@ -47,9 +47,9 @@
                     <i class="fas fa-spinner fa-spin del"></i><span class="text">Зарегистрироваться</span>
                 </button>
                 <!--            <input type="submit" class="btn solid long" value="Зарегистрироваться" />-->
-                <div class="brand-container"><a href="/" class="brand">Мой блог</a></div>
+                <div class="brand-container"><a href="{{route('main')}}" class="brand">Мой блог</a></div>
             </form>
-            <form autocomplete="off" action="/account/recovery/" method="post" class="sign-up-form reset hidden">
+            <form autocomplete="off" action="{{route('recovery')}}" method="post" class="sign-up-form reset hidden">
                 @csrf
                 <h2 class="title">Восстановление доступа</h2>
                 <div class="input-field">
@@ -60,7 +60,7 @@
                     <i class="fas fa-spinner fa-spin del"></i><span class="text">Отправить</span>
                 </button>
                 <!--            <input type="submit" class="btn solid" value="Отправить" />-->
-                <div class="brand-container"><a href="/" class="brand">Мой блог</a></div>
+                <div class="brand-container"><a href="{{route('main')}}" class="brand">Мой блог</a></div>
             </form>
         </div>
     </div>
