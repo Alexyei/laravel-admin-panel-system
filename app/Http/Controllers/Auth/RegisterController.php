@@ -8,7 +8,7 @@ use App\Models\VerifyUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
-use function PHPUnit\Framework\isEmpty;
+
 
 class RegisterController extends Controller
 {

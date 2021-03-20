@@ -39,7 +39,7 @@
 {{--    <?= $content ?>--}}
 {{--</div>--}}
 
-<div class="container @if(Illuminate\Support\Facades\Route::currentRouteName()==='profile') sign-up-mode @endif">
+<div class="container @if(Illuminate\Support\Facades\Route::currentRouteName()==='cabinet') sign-up-mode @endif">
     @yield('content')
 </div>
 

@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14c9e101-c5da-4aa0-b50b-ac5a6b2808a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/reset.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/mail/reset.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/cabinet.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/mail/cabinet.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/confirm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/enter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/enter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mail/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mail/confirm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/auth.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/auth.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +180,8 @@
       <workItem from="1616076659794" duration="9390000" />
       <workItem from="1616091813676" duration="20000" />
       <workItem from="1616136206606" duration="5553000" />
-      <workItem from="1616166507860" duration="3227000" />
+      <workItem from="1616166507860" duration="3479000" />
+      <workItem from="1616221130220" duration="8602000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1616001842689</created>
@@ -210,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616141111236</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="reset password">
+      <created>1616169780842</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616169780843</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +229,7 @@
     <MESSAGE value="first test register" />
     <MESSAGE value="second test register" />
     <MESSAGE value="3 test register" />
-    <option name="LAST_COMMIT_MESSAGE" value="3 test register" />
+    <MESSAGE value="reset password" />
+    <option name="LAST_COMMIT_MESSAGE" value="reset password" />
   </component>
 </project>

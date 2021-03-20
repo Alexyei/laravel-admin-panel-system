@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-@section('title','Регистрация завершена')
+@section('title','Пароль сброшен')
 @section('content')
 
 <div class="forms-container">
