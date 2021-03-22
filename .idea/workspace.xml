@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14c9e101-c5da-4aa0-b50b-ac5a6b2808a3" name="Default Changelist" comment="">
+    <list default="true" id="14c9e101-c5da-4aa0-b50b-ac5a6b2808a3" name="Default Changelist" comment="cabinet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +141,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/mail" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -174,7 +178,10 @@
       <workItem from="1616091813676" duration="20000" />
       <workItem from="1616136206606" duration="5553000" />
       <workItem from="1616166507860" duration="3479000" />
-      <workItem from="1616221130220" duration="13779000" />
+      <workItem from="1616221130220" duration="14264000" />
+      <workItem from="1616311127066" duration="2167000" />
+      <workItem from="1616328606450" duration="1779000" />
+      <workItem from="1616395177852" duration="797000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1616001842689</created>
@@ -218,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616230920238</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="cabinet">
+      <created>1616243021577</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616243021577</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +245,7 @@
     <MESSAGE value="3 test register" />
     <MESSAGE value="reset password" />
     <MESSAGE value="change cabinet" />
-    <option name="LAST_COMMIT_MESSAGE" value="change cabinet" />
+    <MESSAGE value="cabinet" />
+    <option name="LAST_COMMIT_MESSAGE" value="cabinet" />
   </component>
 </project>
