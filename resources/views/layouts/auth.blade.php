@@ -11,6 +11,7 @@
 
     <!-- fontawesome -->
     <link rel="stylesheet" href="{{asset('styles/all.css')}}">
+
     <link rel="stylesheet" href="{{asset('styles/auth/auth.css')}}" />
     <!-- Custom alert-message   -->
     <link rel="stylesheet" href="{{asset('styles/popup/popup.css')}}">
