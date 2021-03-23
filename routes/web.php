@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Auth\CabinetController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -48,7 +48,7 @@ Route::get('/cabinet/{verifycabinet}/{email}', [CabinetController::class,'save']
 
 //админка
 Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
-    Route::get('/', [AdminController::class,'index']);
+    Route::get('/', [AdminController::class,'index'])->name('admin');
     Route::resource('category', CategoryController::class);
   //  Route::resource('post', PostController::class);
 });
