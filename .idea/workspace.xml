@@ -2,40 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14c9e101-c5da-4aa0-b50b-ac5a6b2808a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/fonts/mdi/materialdesignicons-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/mdi/materialdesignicons-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/mdi/materialdesignicons-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/mdi/materialdesignicons-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/backend/browser-logo/chrome-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/backend/browser-logo/explorer-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/backend/browser-logo/firefox-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/backend/browser-logo/netscape-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/backend/browser-logo/opera-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/backend/browser-logo/safari-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/backend/faces/face2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/backend/faces/face3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/backend/faces/face4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/backend/hoverable-collapse.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/backend/misc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/backend/off-canvas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/vendors/bundle/vendor.bundle.base.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/vendors/bundle/vendor.bundle.base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/category/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/category/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/category/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/dashboard.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/backend/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/backend/face1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/backend/faces/face1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/backend/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/backend/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/backend/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/backend/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/backend/style.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/vendors/mdi/materialdesignicons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/vendors/mdi/materialdesignicons.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/vendors/mdi/materialdesignicons.min.css.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +15,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -218,7 +195,7 @@
       <workItem from="1616397232064" duration="6407000" />
       <workItem from="1616418026680" duration="8169000" />
       <workItem from="1616483868047" duration="2561000" />
-      <workItem from="1616488919659" duration="5360000" />
+      <workItem from="1616488919659" duration="9676000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1616001842689</created>
@@ -283,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616405947053</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="category">
+      <created>1616500869931</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1616500869931</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +282,8 @@
     <MESSAGE value="change cabinet" />
     <MESSAGE value="cabinet" />
     <MESSAGE value="admin templates 1 part" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin templates 1 part" />
+    <MESSAGE value="category" />
+    <option name="LAST_COMMIT_MESSAGE" value="category" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

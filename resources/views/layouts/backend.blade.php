@@ -309,6 +309,7 @@
 <!-- endinject -->
 <!-- Custom js for this page -->
 <script src="{{asset('scripts/backend/dashboard.js')}}"></script>
+<script src="{{asset('scripts/backend/app.js')}}"></script>
 <!-- End custom js for this page -->
 </body>
 </html>
