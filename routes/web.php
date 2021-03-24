@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\PostController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -50,5 +51,6 @@ Route::get('/cabinet/{verifycabinet}/{email}', [CabinetController::class,'save']
 Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class,'index'])->name('admin');
     Route::resource('category', CategoryController::class);
+    Route::resource('post', PostController::class);
   //  Route::resource('post', PostController::class);
 });

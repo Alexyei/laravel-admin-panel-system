@@ -19,6 +19,7 @@
 {{--    <link rel="stylesheet" href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css" />--}}
     <link rel="stylesheet" href="{{asset('styles/backend/style.css')}}" />
     <link rel="shortcut icon" href="{{asset('/images/backend/favicon.png')}}" />
+    @yield('styles','')
 </head>
 <body>
 <div class="container-scroller">
@@ -75,10 +76,10 @@
                 <div class="collapse" id="ui-posts">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/ui-features/buttons.html">Список</a>
+                            <a class="nav-link" href="{{route('post.index')}}">Список</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/ui-features/dropdowns.html">Добавить</a>
+                            <a class="nav-link" href="{{route('post.create')}}">Добавить</a>
                         </li>
                     </ul>
                 </div>
@@ -311,5 +312,6 @@
 <script src="{{asset('scripts/backend/dashboard.js')}}"></script>
 <script src="{{asset('scripts/backend/app.js')}}"></script>
 <!-- End custom js for this page -->
+@yield('scripts','')
 </body>
 </html>

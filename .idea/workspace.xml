@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14c9e101-c5da-4aa0-b50b-ac5a6b2808a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/scripts/backend/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/vendors/tagify/tagify.custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/vendors/tagify/tagify.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/vendors/tagify/tagify.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/vendors/tagify/tagify.custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/post/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/post/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/post/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/backend/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/backend/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,24 +153,25 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/styles/vendors/bundle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backend/post" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\laravel-admin-panel-system\resources\views\backend\post" />
       <recent name="C:\OpenServer\domains\laravel-admin-panel-system\public\styles\vendors\bundle" />
       <recent name="C:\OpenServer\domains\laravel-admin-panel-system\public\scripts\vendors\bundle" />
       <recent name="C:\OpenServer\domains\laravel-admin-panel-system\public\scripts\backend" />
       <recent name="C:\OpenServer\domains\laravel-admin-panel-system\public\fonts\mdi" />
-      <recent name="C:\OpenServer\domains\laravel-admin-panel-system\public\images\backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\laravel-admin-panel-system\public\scripts\vendors\tagify" />
+      <recent name="C:\OpenServer\domains\laravel-admin-panel-system\public\styles\vendors\tagify" />
       <recent name="C:\OpenServer\domains\laravel-admin-panel-system\app\Http\Controllers\Backend" />
       <recent name="C:\OpenServer\domains\laravel-admin-panel-system\public\images\backend\faces" />
       <recent name="C:\OpenServer\domains\laravel-enter-system\app\Http\Controllers\Auth" />
-      <recent name="C:\OpenServer\domains\laravel-enter-system\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -195,7 +203,9 @@
       <workItem from="1616397232064" duration="6407000" />
       <workItem from="1616418026680" duration="8169000" />
       <workItem from="1616483868047" duration="2561000" />
-      <workItem from="1616488919659" duration="9676000" />
+      <workItem from="1616488919659" duration="10348000" />
+      <workItem from="1616515100997" duration="43000" />
+      <workItem from="1616565929775" duration="11182000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1616001842689</created>
@@ -267,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616500869931</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="category 2">
+      <created>1616501973162</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1616501973162</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +300,8 @@
     <MESSAGE value="cabinet" />
     <MESSAGE value="admin templates 1 part" />
     <MESSAGE value="category" />
-    <option name="LAST_COMMIT_MESSAGE" value="category" />
+    <MESSAGE value="category 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="category 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
