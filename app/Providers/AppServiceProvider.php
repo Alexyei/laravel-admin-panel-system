@@ -2,7 +2,11 @@
 
 namespace App\Providers;
 
+use App\Http\View\Composers\CategoryComposer;
+use App\Http\View\Composers\TagComposer;
+use App\Models\Category;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,5 +29,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
+
+        View::composer(['backend.post.create','backend.post.edit'], TagComposer::class);
+        View::composer(['backend.post.create','backend.post.edit'], CategoryComposer::class);
     }
 }

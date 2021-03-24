@@ -54,9 +54,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        $tags = Tag::all();
-        return view('backend.post.create',['categories'=>$categories,'tags'=>$tags]);
+//        $categories = Category::all();
+       // $tags = Tag::all();
+        return view('backend.post.create');
     }
 
     /**
@@ -99,7 +99,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('backend.post.edit',['post'=>$post, ]);
+        //dd($post->tags()->get());
+        return view('backend.post.edit',['post'=>$post]);
     }
 
     /**
