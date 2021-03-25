@@ -2,10 +2,10 @@
 @section('title','Категории')
 @section('content')
     <div class="page-header">
-        <h3 class="page-title">Категории</h3>
+        <h3 class="page-title">Посты</h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Категории</a></li>
+                <li class="breadcrumb-item"><a href="#">Псоты</a></li>
                 <li class="breadcrumb-item active" aria-current="page"> Список</li>
             </ol>
         </nav>
@@ -34,19 +34,19 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($categories as $category)
+                            @foreach($posts as $post)
                             <tr>
                                 <td>
-                                    {{$category['id']}}
+                                    {{$post['id']}}
                                 </td>
-                                <td> {{$category['name']}}</td>
+                                <td> {{$post['name']}}</td>
                                 <td>
-                                    <a class="btn btn-info btn-icon-text" href="{{route('category.edit',$category['id'])}}">
+                                    <a class="btn btn-info btn-icon-text" href="{{route('post.edit',$post['id'])}}">
                                         <i class="mdi mdi-file-check btn-icon-append">
                                         </i>
                                         Редактировать
                                     </a>
-                                    <form action="{{route("category.destroy", $category['id'])}}" method="POST" style="display: inline-block">
+                                    <form action="{{route("post.destroy", $post['id'])}}" method="POST" style="display: inline-block">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger btn-icon-text">
@@ -70,7 +70,7 @@
     </div>
     <div class="row">
         <div class="col-xl-12 col-sm-12 grid-margin stretch-card">
-            {{$categories->links()}}
+            {{$posts->links()}}
         </div>
     </div>
 @endsection

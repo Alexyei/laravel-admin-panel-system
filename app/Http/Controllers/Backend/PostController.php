@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
 {
@@ -44,7 +45,7 @@ class PostController extends Controller
 //        $new_tag->save();
 //        return 'tags created!';
         $posts = Post::with('tags')->paginate(5);
-        return view('backend.post.index',['post'=>$posts]);
+        return view('backend.post.index',['posts'=>$posts]);
     }
 
     /**
@@ -129,6 +130,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+
         //dd($post->tags()->get());
         return view('backend.post.edit',['post'=>$post]);
     }
@@ -142,6 +144,39 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        $request->validate([
+            'name' => ['bail','required','min:2','max:500'],
+            'description' => ['bail','required','min:2','max:500'],
+            'text' => ['bail','required','min:2','max:30000'],
+            'category' => ['bail','required','exists:categories,id'],
+            'mainImg' => ['bail','mimes:jpg,jpeg,png,gif,webp','max:5048'],
+            'tags' => ['bail','required'],
+        ]);
+
+        foreach (array_column(json_decode(request()->tags), 'code') as $tag){
+            if (!Tag::find($tag))
+                return redirect()->back()->withErrors(["tags_validate"=>"Ошибка валидации тегов!"]);
+        }
+
+        if (request()->mainImg) {
+            $newMainImgName = time() . '_' . mb_substr(request()->name, 0, 239) . '.' . request()->mainImg->extension();
+            request()->mainImg->move(public_path('images/post/main'), $newMainImgName);
+
+            if(File::exists(public_path('images/post/main/'.$post->mainImg))) {
+                File::delete(public_path('images/post/main/'.$post->mainImg));
+            }
+            $post->update(['mainImg' => $newMainImgName]);
+        }
+
+        $post->update([
+            'name' => request()->name,
+            'description' => request()->description,
+            'text' => request()->text,
+            'category' => request()->category,
+        ]);
+
+        $post->tags()->sync(array_column(json_decode(request()->tags), 'code'));
+
         return redirect()->back()->with(['success'=>'Пост был успешно обновлён!']);
     }
 
@@ -153,6 +188,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        if(File::exists(public_path('images/post/main/'.$post->mainImg))) {
+            File::delete(public_path('images/post/main/'.$post->mainImg));
+        }
         $post->delete();
         return redirect()->back()->with(['success'=>'Пост был успешно удалён!']);
     }

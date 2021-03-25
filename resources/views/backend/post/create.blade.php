@@ -72,7 +72,7 @@
                         <div class="form-group">
                             <label for="mainImg">Изображение статьи</label>
                             <img src="" alt="" class="img-uploaded" style="display: block; width: 300px">
-                            <input type="file" name="mainImg" class="form-control" id="mainImg">
+                            <input type="file" name="mainImg" class="form-control" id="mainImg" accept="image/jpeg,image/png,image/gif,image/webp">
 {{--                            <a href="" class="popup_selector" data-inputid="mainImg">Выбрать изображение</a>--}}
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Создать</button>
@@ -378,9 +378,9 @@
         });
 
         tagify.on('add', function(e){
-            console.log( "original Input:", tagify.DOM.originalInput);
-            console.log( "original Input's value:", tagify.DOM.originalInput.value);
-            console.log( "event detail:", e.detail);
+            // console.log( "original Input:", tagify.DOM.originalInput);
+            // console.log( "original Input's value:", tagify.DOM.originalInput.value);
+            // console.log( "event detail:", e.detail);
            // onAddTag(e);
         });
 
