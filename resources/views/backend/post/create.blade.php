@@ -36,7 +36,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="title">Создать пост</h4>
-                    <form action="{{route('post.store')}}" method="post" class="forms-sample">
+                    <form action="{{route('post.store')}}" method="post" class="forms-sample" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="name">Название</label>
@@ -47,6 +47,7 @@
                             <!-- select -->
                                 <label for="category">Выберите категорию</label>
                                 <select name="category" class="form-control" id="category" required>
+                                    <option selected value="">Не выбрана</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
                                     @endforeach
@@ -54,25 +55,25 @@
                         </div>
                         <div class="form-group">
                             <label for="tags">Теги</label>
-                            <input required value="{{old('tags')}}" class="form-control" id="tags" placeholder="Добавьте теги (не более 5)"
+                            <input value="{{old('tags')}}" class="form-control" id="tags" placeholder="Добавьте теги (не более 5)"
                                    name="tags">
                         </div>
 
                         <div class="form-group">
                             <label for="description">Описание</label>
-                            <textarea required value="{{old('description')}}" type="text" class="form-control" id="description" placeholder="Краткое описание поста"
-                                      name="description"></textarea>
+                            <textarea required type="text" class="form-control" id="description" placeholder="Краткое описание поста"
+                                      name="description">{{old('description')}}</textarea>
                         </div>
                         <div class="form-group">
-{{--                            <label for="text">Текст поста</label>--}}
-                            <textarea name="text" id="text" class="form-control editor"></textarea>
+                            <label for="text">Текст</label>
+                            <textarea required name="text" id="text" class="form-control editor">{{old('text')}}</textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="mainImg">Изображение статьи</label>
                             <img src="" alt="" class="img-uploaded" style="display: block; width: 300px">
-                            <input type="text" name="mainImg" class="form-control" id="mainImg" value="" readonly>
-                            <a href="" class="popup_selector" data-inputid="mainImg">Выбрать изображение</a>
+                            <input type="file" name="mainImg" class="form-control" id="mainImg">
+{{--                            <a href="" class="popup_selector" data-inputid="mainImg">Выбрать изображение</a>--}}
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Создать</button>
                     </form>
@@ -83,6 +84,7 @@
     </div>
 @endsection
 @section('scripts')
+    <script src="{{asset('scripts/backend/previewUploadImg.js')}}"></script>
     <script src="{{asset('scripts/vendors/tagify/tagify.min.js')}}"></script>
     <script>
         let tagify = new Tagify(document.querySelector('input[name=tags]'), {

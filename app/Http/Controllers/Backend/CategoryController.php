@@ -44,7 +44,7 @@ class CategoryController extends Controller
         $new_category->name = $request->name;
         $new_category->save();
 
-        return redirect()->back()->with(['success'=>'Категория добавлена!']);
+        return redirect()->back()->with(['success'=>'Категория создана!']);
     }
 
     /**

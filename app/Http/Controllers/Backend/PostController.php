@@ -67,17 +67,47 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => ['bail','required','min:2','max:500'],
+            'description' => ['bail','required','min:2','max:500'],
+            'text' => ['bail','required','min:2','max:30000'],
+            'category' => ['bail','required','exists:categories,id'],
+            'mainImg' => ['bail','required','mimes:jpg,jpeg,png,gif,webp','max:5048'],
+            'tags' => ['bail','required'],
+        ]);
+
+        foreach (array_column(json_decode(request()->tags), 'code') as $tag){
+            if (!Tag::find($tag))
+                return redirect()->back()->withErrors(["tags_validate"=>"Ошибка валидации тегов!"]);
+        }
+
+//        dd(request()->mainImg);
+        // 10 +  '_' + 239 + '.' + 4 = 255
+        $newMainImgName = time() . '_' . mb_substr(request()->name, 0, 239) . '.' . request()->mainImg->extension();
+        request()->mainImg->move(public_path('images/post/main'),$newMainImgName);
 //dd(request());
        // dd(array_column(json_decode(request()->tags), 'code'));
-        $new_post = new Post();
-        $new_post->name = 'first_post';
-        $new_post->description = 'desc of first_post';
-        $new_post->text = 'Если вам нужно обновить существующую строку в промежуточной таблице ваших отношений, вы можете использовать этот updateExistingPivotметод. Этот метод принимает внешний ключ промежуточной записи и массив атрибутов для обновления:';
-        $new_post->mainImg = "No image select";
-        $new_post->category = request()->category;
-        $new_post->save();
+
+//        $new_post = new Post();
+//        $new_post->name = 'first_post';
+//        $new_post->description = 'desc of first_post';
+//        $new_post->text = 'Если вам нужно обновить существующую строку в промежуточной таблице ваших отношений, вы можете использовать этот updateExistingPivotметод. Этот метод принимает внешний ключ промежуточной записи и массив атрибутов для обновления:';
+//        $new_post->mainImg = "No image select";
+//        $new_post->category = request()->category;
+//        $new_post->save();
+//        $new_post->tags()->sync(array_column(json_decode(request()->tags), 'code'));
+
+        $new_post = Post::create([
+            'name' => request()->name,
+            'description' => request()->description,
+            'text' => request()->text,
+            'category' => request()->category,
+            'mainImg' => $newMainImgName
+        ]);
+
         $new_post->tags()->sync(array_column(json_decode(request()->tags), 'code'));
-        return 'post created';
+
+        return redirect()->back()->with(['success'=>'Пост создан!']);
     }
 
     /**

@@ -290,7 +290,7 @@
 </div>
 <!-- container-scroller -->
 <!-- plugins:js -->
-<script src="{{asset('scripts/vendors/bundle/vendor.bundle.base.js')}}"></script>--}}
+<script src="{{asset('scripts/vendors/bundle/vendor.bundle.base.js')}}"></script>
 <!-- endinject -->
 <!-- Plugin js for this page -->
 <script src="{{asset('scripts/Jquery3.4.1.min.js')}}"></script>
