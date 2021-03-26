@@ -11,4 +11,11 @@ class AdminController extends Controller
     {
         return view('backend.dashboard');
     }
+
+    public function tinyMCEUpload(){
+       // return response()->json(['location'=>'/storage/$path']);
+        $fileName = request()->file('file')->getClientOriginalName();
+        $path=request()->file('file')->storeAs('uploads', $fileName, 'public');
+        return response()->json(['location'=>"/storage/$path"]);
+    }
 }

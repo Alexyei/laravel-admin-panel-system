@@ -5,7 +5,7 @@
         <h3 class="page-title">Посты</h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Псоты</a></li>
+                <li class="breadcrumb-item"><a href="#">Посты</a></li>
                 <li class="breadcrumb-item active" aria-current="page"> Список</li>
             </ol>
         </nav>

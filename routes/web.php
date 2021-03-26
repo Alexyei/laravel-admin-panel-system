@@ -48,8 +48,10 @@ Route::post('/cabinet', [CabinetController::class,'change'])->name('cabinet.chan
 Route::get('/cabinet/{verifycabinet}/{email}', [CabinetController::class,'save'])->name('cabinet.save')->middleware('signed');
 
 //админка
-Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
+Route::group(['middleware' => ['admin','optimizeImages'], 'prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class,'index'])->name('admin');
+//    Route::get('/image-tinyMCE-upload', [AdminController::class,'index'])->name('admin');
+    Route::post('/image-tinyMCE-upload', [AdminController::class,'tinyMCEUpload']);
     Route::resource('category', CategoryController::class);
     Route::resource('post', PostController::class);
   //  Route::resource('post', PostController::class);

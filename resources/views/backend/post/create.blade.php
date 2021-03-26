@@ -1,5 +1,5 @@
 @extends('layouts.backend')
-@section('title','Добавить категорию')
+@section('title','Добавить пост')
 @section('styles')
     <link rel="stylesheet" href="{{asset('styles/vendors/tagify/tagify.css')}}" />
     <link rel="stylesheet" href="{{asset('styles/vendors/tagify/tagify.custom.css')}}" />
@@ -66,7 +66,7 @@
                         </div>
                         <div class="form-group">
                             <label for="text">Текст</label>
-                            <textarea required name="text" id="text" class="form-control editor">{{old('text')}}</textarea>
+                            <textarea required name="text" id="text" class="form-control tinyMCE-editor">{{old('text')}}</textarea>
                         </div>
 
                         <div class="form-group">
@@ -396,4 +396,6 @@
         //var tagsToAdd = tagify.settings.whitelist.slice(0, 2)
         //tagify.addTags(tagsToAdd)
     </script>
+    <script src="{{asset('tinymce/js/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{asset('tinymce/js/tinymce/tinymce_init.js')}}"></script>
 @endsection
