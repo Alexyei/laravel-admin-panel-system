@@ -24,9 +24,11 @@ use Illuminate\Support\Facades\Route;
 //главная
 Route::get('/', function () {
     return view('welcome');
+
     //return view('popup.popup',['status'=>'warning','message'=>'привет мир','redirect'=>route('enter')]);
 })->name('main');
 
+Route::get('/test', [LoginController::class,'test'])->name('test');
 
 //авторизация
 Route::get('/enter/{user:login?}', [LoginController::class,'enter'])->name('enter');

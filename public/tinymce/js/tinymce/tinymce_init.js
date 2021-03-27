@@ -119,7 +119,7 @@ tinymce.init({
 
     // document_base_url : "http://my-phpblog",
     // абсолютные адреса без хоста
-    //relative_urls : false,
+    relative_urls : false,
     //remove_script_host : true,
 
 
