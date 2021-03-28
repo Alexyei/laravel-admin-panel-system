@@ -107,6 +107,10 @@ class LoginController extends Controller
         $new_text = $this->DOMinnerHTML($doc->getElementsByTagName('body')[0]);
 
         //move $img_name to $new_path
+        foreach ($img_names as $img){
+            File::move(public_path('/storage/uploads/'.$img),public_path('$new_path'.$img));
+        }
+
 
          if ($delete
              && iterator_count(new FilesystemIterator( pUblic_path($new_path), FilesystemIterator::SKIP_DOTS))

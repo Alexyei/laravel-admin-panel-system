@@ -175,6 +175,7 @@ tinymce.init({
     content_css: "/tinymce/css/elements.css",
 
      image_title: true,
+   // images_reuse_filename: true,
     // automatic_uploads: true,
     //images_upload_url: '/admin/image-tinyMCE-upload',
     file_picker_types: 'image',
