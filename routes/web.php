@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\PostController;
+use App\Http\Controllers\Frontend\MainController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -22,11 +23,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 //главная
-Route::get('/', function () {
-    return view('welcome');
-
+Route::get('/',
+//    function () {
+//    return view('welcome');
+    [MainController::class,'index']
     //return view('popup.popup',['status'=>'warning','message'=>'привет мир','redirect'=>route('enter')]);
-})->name('main');
+//}
+)->name('main');
+
+Route::get('/post/{post}/{slug}', [MainController::class,'save'])->name('post');
 
 //Route::get('/test', [LoginController::class,'test'])->name('test');
 
