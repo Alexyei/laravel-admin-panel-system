@@ -10,7 +10,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('tags')->orderBy('id','desc')->paginate(1);
+        $posts = Post::with('tags')->orderBy('id','desc')->paginate(4);
         return view('frontend.main', ['posts' => $posts]);
     }
 }

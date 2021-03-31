@@ -50,4 +50,16 @@ class Post extends Model
     function tags(){
         return $this->belongsToMany(Tag::class);
     }
+
+    protected $guarded = [];
+
+//    public function user()
+//    {
+//        return $this->belongsTo(User::class);
+//    }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id')->orderBy('id','desc');
+    }
 }

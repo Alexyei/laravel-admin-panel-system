@@ -34,10 +34,10 @@
                         </div>
                     </div>
                     <div class="post-title">
-                        <a href="{{route('post',[$post['id'], Illuminate\Support\Str::slug($post['name'])])}}">{{$post['name']}}</a>
+                        <a href="{{route('post.show',[$post['id'], Illuminate\Support\Str::slug($post['name'])])}}">{{$post['name']}}</a>
                         <p>{{$post['description']}}</p>
                         <p>Идентфикатор этого поста {{$post['id']}}</p>
-                        <a class="btn post-btn" href="{{route('post',[$post['id'], Illuminate\Support\Str::slug($post['name'])])}}">Читать &nbsp; <i class="fas fa-arrow-right"></i></a>
+                        <a class="btn post-btn" href="{{route('post.show',[$post['id'], Illuminate\Support\Str::slug($post['name'])])}}">Читать &nbsp; <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <hr>

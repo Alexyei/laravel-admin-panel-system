@@ -24,27 +24,37 @@ $(document).ready(function () {
     // $(document).on('click', ".not-allowed a", function () {
     //     return false;
     // });
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
     let commentCount = Number($('.comment-count').first().text())
     // console.log(commentCount);
     $("#addComment, #addReply").on('click', function () {
         // console.log(this);
         let parentId = $(this).data("parentId");
+        let postId = $(this).data("postId");
         let isReply = !!parentId;
         let comment = (!isReply) ? $("#mainComment").val() : $("#replyComment").val();
 
-        // console.log(parentId);
-        // console.log(isReply);
-        // console.log(comment);
+        console.log(parentId);
+        console.log(postId);
+        console.log(isReply);
+        console.log(comment);
+        console.log('/comment/'+((isReply)?'reply':'store'));
 
 
-        if ([...comment].length > 5 && [...comment].length <= 10000) {
+        if ([...comment].length > 4 && [...comment].length <= 10000) {
             $.ajax({
-                url: '/comment/',
+                url: '/comment/'+((isReply)?'reply':'store'),
                 method: 'POST',
                 dataType: 'text',
                 data: {
                     comment: comment,
                     // isReply: isReply,
+                    postId: postId,
                     parentId: parentId
                 }, success: function (response) {
 
@@ -72,10 +82,21 @@ $(document).ready(function () {
 
                     }
                 },
-                error: function (data) {
-                    json = jQuery.parseJSON(data.responseText);
-                    //alert(json.status + ' - ' + json.message);
-                    modalAlertNotification(json.message,json.status);
+                error: function (result) {
+                    // json = jQuery.parseJSON(data.responseText);
+                    // modalAlertNotification(json.message,json.status);
+
+                    result = result.responseJSON;
+                    console.log(result);
+                    console.log(result.status);
+                    // ошибки валидации
+                    if (result.errors)
+
+                        modalAlertNotification(Object.values(result.errors)[0][0],"error");
+                    else if (result.message)
+                        modalAlertNotification(result.message,result.status,result.redirect);
+                    else if (result.redirect)
+                        window.location.href = result.redirect;
                 }
             });
         } else {

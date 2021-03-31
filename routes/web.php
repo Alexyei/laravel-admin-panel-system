@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\PostController;
+use App\Http\Controllers\Frontend\CommentController;
 use App\Http\Controllers\Frontend\MainController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +32,7 @@ Route::get('/',
 //}
 )->name('main');
 
-Route::get('/post/{post}/{slug}', [MainController::class,'save'])->name('post');
+//Route::get('/post/{post}/{slug}', [MainController::class,'save'])->name('post');
 
 //Route::get('/test', [LoginController::class,'test'])->name('test');
 
@@ -60,6 +61,10 @@ Route::group(['middleware' => ['admin','optimizeImages'], 'prefix' => 'admin'], 
 //    Route::get('/image-tinyMCE-upload', [AdminController::class,'index'])->name('admin');
     Route::post('/image-tinyMCE-upload', [AdminController::class,'tinyMCEUpload']);
     Route::resource('category', CategoryController::class);
-    Route::resource('post', PostController::class);
+    Route::resource('post', PostController::class,  ['except' => ['show']]);
   //  Route::resource('post', PostController::class);
 });
+
+Route::get('/post/{post}/{slug?}', [PostController::class,'show'])->name('post.show');
+Route::post('/comment/store', [CommentController::class,'store'])->name('comment.add')->middleware('auth');;
+Route::post('/reply/store', [CommentController::class,'replyStore'])->name('reply.add')->middleware('auth');;
