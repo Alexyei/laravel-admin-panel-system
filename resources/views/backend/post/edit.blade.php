@@ -67,7 +67,10 @@
                         </div>
                         <div class="form-group">
                             <label for="text">Текст</label>
-                            <textarea required name="text" id="text" class="form-control tinyMCE-editor">{{old('text')??$post['text']}}</textarea>
+                            <textarea required name="text" id="text" class="form-control tinyMCE-editor">
+                                {{old('text')??$post['text']}}
+
+                            </textarea>
                         </div>
 
                         <div class="form-group">
@@ -164,5 +167,5 @@
         @endif
     </script>
     <script src="{{asset('tinymce/js/tinymce/tinymce.min.js')}}"></script>
-    <script src="{{asset('tinymce/js/tinymce/tinymce_init.js')}}"></script>
+    <script src="{{asset('tinymce/js/tinymce/tinymce_init.js').'?'.rand(10,1000)}}"></script>
 @endsection

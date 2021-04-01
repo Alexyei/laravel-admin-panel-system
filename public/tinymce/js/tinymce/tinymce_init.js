@@ -126,7 +126,7 @@ tinymce.init({
     // relative_urls : false,
     // remove_script_host : false,
     // convert_urls : true,
-
+    // entity_encoding : "raw",
     language: "ru",
     //Проверка орфографии на русском, неправильно написанные слова будут подчёрктнуты
     gecko_spellcheck: true,

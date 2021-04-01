@@ -2,9 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @mixin Builder
+ */
 class Comment extends Model
 {
     use HasFactory;
@@ -18,6 +22,6 @@ class Comment extends Model
 
     public function replies()
     {
-        return $this->hasMany(Comment::class, 'parent_id')->orderBy('id','desc');;
+        return $this->hasMany(Comment::class, 'parent_id')->orderBy('id','desc');
     }
 }

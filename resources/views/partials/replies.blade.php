@@ -63,6 +63,6 @@
         </div>
         @endauth
     @endif
-@include('partials.replies', ['comments' => $comment->replies(), 'level' => $level+1])
+@include('partials.replies', ['comments' => $comment->replies, 'level' => $level+1])
 </div>
 @endforeach

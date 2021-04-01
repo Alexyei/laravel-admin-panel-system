@@ -58,6 +58,11 @@ class Post extends Model
 //        return $this->belongsTo(User::class);
 //    }
 
+    public function commentsCount()
+    {
+        return $this->morphMany(Comment::class, 'commentable')->count();
+    }
+
     public function comments()
     {
         return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id')->orderBy('id','desc');

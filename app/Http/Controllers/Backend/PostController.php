@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Post;
 use App\Models\Tag;
 use DOMDocument;
@@ -126,6 +127,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+
         return view('frontend.post', ['post'=>$post]);
     }
 
@@ -175,7 +177,7 @@ class PostController extends Controller
             $post->update(['mainImg' => $newMainImgName]);
         }
 
-
+//dd(htmlentities(request()->text));
         $post->update([
             'name' => request()->name,
             'description' => request()->description,

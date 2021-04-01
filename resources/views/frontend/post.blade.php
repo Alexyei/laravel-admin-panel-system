@@ -13,7 +13,7 @@
                 <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
                 <span><i class="fas fa-calendar-alt text-gray"></i> {{strftime( "%B %e, %Y", strtotime($post['created_at'])) }}</span>
                 <span><i class="fas fa-comments text-gray"></i><span
-                        class="comment-count">100</span></span>
+                        class="comment-count">{{$post->commentsCount()}}</span></span>
             </div>
         </div>
     </section>
@@ -96,7 +96,7 @@
 
                         @endguest
                     <hr>
-                    <h1 class="title">Комментарии <span class="comment-count">100</span></h1>
+                    <h1 class="title">Комментарии <span class="comment-count">{{$post->commentsCount()}}</span></h1>
 
                     <div class="userComments">
                         @include('partials.replies', ['comments' => $post->comments, 'post_id' => $post->id, 'level' => 0])

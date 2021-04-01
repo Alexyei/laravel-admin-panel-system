@@ -30,7 +30,7 @@
                         <div class="post-info flex-row">
                             <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
                             <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp; {{strftime( "%B %e, %Y", strtotime($post['created_at'])) }}</span>
-                            <span><i class="fas fa-comments text-gray"></i>&nbsp;&nbsp; {{100}}</span>
+                            <span><i class="fas fa-comments text-gray"></i>&nbsp;&nbsp; {{$post->commentsCount()}}</span>
                         </div>
                     </div>
                     <div class="post-title">

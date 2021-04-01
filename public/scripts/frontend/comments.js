@@ -39,11 +39,11 @@ $(document).ready(function () {
         let isReply = !!parentId;
         let comment = (!isReply) ? $("#mainComment").val() : $("#replyComment").val();
 
-        console.log(parentId);
-        console.log(postId);
-        console.log(isReply);
-        console.log(comment);
-        console.log('/comment/'+((isReply)?'reply':'store'));
+        // console.log(parentId);
+        // console.log(postId);
+        // console.log(isReply);
+        // console.log(comment);
+        // console.log('/comment/'+((isReply)?'reply':'store'));
 
 
         if ([...comment].length > 4 && [...comment].length <= 10000) {
@@ -110,7 +110,7 @@ $(document).ready(function () {
 
         let parent = $(this).closest(".comment");
 
-        let comment = parent.data("commentId");
+        let commentId = parent.data("commentId");
 
         // console.log("reaction");
 
@@ -122,11 +122,11 @@ $(document).ready(function () {
         // return false;
         // if ([...comment].length > 5 && [...comment].length <= 10000) {
         $.ajax({
-            url: '/comment/delete/',
+            url: '/comment/delete',
             method: 'POST',
             dataType: 'text',
             data: {
-                comment: comment,
+                commentId: commentId,
                 // isReply: isReply,
                 // type: type
             }, success: function (response) {
@@ -144,9 +144,20 @@ $(document).ready(function () {
                 // clicked_button.siblings(".reaction-down-count").text(json.dislike);
 
             },
-            error: function (data) {
-                json = jQuery.parseJSON(data.responseText);
-                modalAlertNotification(json.message,json.status);
+            error: function (result) {
+                // json = jQuery.parseJSON(data.responseText);
+                // modalAlertNotification(json.message,json.status);
+                result = result.responseJSON;
+                console.log(result);
+                console.log(result.status);
+                // ошибки валидации
+                if (result.errors)
+
+                    modalAlertNotification(Object.values(result.errors)[0][0],"error");
+                else if (result.message)
+                    modalAlertNotification(result.message,result.status,result.redirect);
+                else if (result.redirect)
+                    window.location.href = result.redirect;
             }
         });
         // } else {
