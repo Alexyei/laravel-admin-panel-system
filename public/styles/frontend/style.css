@@ -407,10 +407,11 @@ main .post .post-data{
     /*display: flex;*/
     /*justify-content: center;*/
     /*align-items: center;*/
+    width: 100%;
 }
 main .post .post-data img{
-    width: 100%;
-    height: auto;
+    /*width: 100%;*/
+    /*height: auto;*/
 }
 main .posts{
     margin: 4rem 0;

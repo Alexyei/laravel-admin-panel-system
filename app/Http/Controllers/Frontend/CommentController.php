@@ -32,6 +32,7 @@ class CommentController extends Controller
                 'status' => 'error'
             ], 400);
 
+
         $comment = new Comment;
 
         $comment->comment = $request->comment;
@@ -47,6 +48,7 @@ class CommentController extends Controller
 //            'message'=>'Пожалуйста перейдите по ссылке отправленной на ваш email',
 //            'status'=>'success',
 //        ]);
+
 
         return view('partials.replies',
             ['comments'=>[$comment],'post_id'=>$request->postId,'level'=>0]);

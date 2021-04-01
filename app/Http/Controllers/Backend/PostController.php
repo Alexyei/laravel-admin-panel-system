@@ -222,10 +222,11 @@ class PostController extends Controller
     public function articleImgsSync($text, $new_path = '/images/post/article/100/', $delete = false)
     {
 
+
         $old_path = '/storage/uploads/';
-        $doc = new DOMDocument();
-        $doc->loadHTML($text);
-        //    dd($doc->saveHTML());
+        $doc = new DOMDocument('1.0', 'UTF-8');
+        $doc->loadHTML('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'.$text);
+          // dd($doc->saveHTML());
         $tags = $doc->getElementsByTagName('img');
 
 
@@ -248,6 +249,7 @@ class PostController extends Controller
         }
         $new_text = $this->DOMinnerHTML($doc->getElementsByTagName('body')[0]);
 
+        //dd($new_text);
         //move $img_name to $new_path
         if (!File::exists(public_path($new_path))) {
             File::makeDirectory(public_path($new_path));
