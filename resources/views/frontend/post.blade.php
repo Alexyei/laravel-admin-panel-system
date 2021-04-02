@@ -234,4 +234,5 @@
 @endsection
 @section('scripts')
     <script src="{{asset('scripts/frontend/comments.js')}}"></script>
+    <script src="{{asset('scripts/frontend/reactions.js')}}"></script>
 @endsection

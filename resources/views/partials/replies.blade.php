@@ -41,14 +41,24 @@
                     @endadmin
                 </div>
                 <div class="reaction-info">
-                    <span class="reaction-up-count">100</span>
+                    <span class="reaction-up-count">{{$comment->reactionsCount('like')}}</span>
 {{--                    ' . ((isset($reaction) and $reaction === 'like') ? ' active' : '') . '--}}
-                    <a href="#" data-reaction-type="like"  data-comment-id='{{ $comment['id'] }}' class="reaction-icon">
+                    <a href="#" data-reaction-type="like"  data-comment-id='{{ $comment['id'] }}' class="reaction-icon
+                     '@auth
+                        @if($comment->checkUserReaction('like'))
+                        active
+                    @endif
+                    @endauth'">
                     <i class="fas fa-long-arrow-alt-up"></i>
                     </a>
-                    <span class="reaction-down-count">500</span>
+                    <span class="reaction-down-count">{{$comment->reactionsCount('dislike')}}</span>
 {{--                    ' . ((isset($reaction) and $reaction === 'dislike') ? ' active' : '') . '--}}
-                    <a href="#" data-reaction-type="dislike"  data-comment-id='{{ $comment['id'] }}' class="reaction-icon">
+                    <a href="#" data-reaction-type="dislike"  data-comment-id='{{ $comment['id'] }}' class="reaction-icon
+                    '@auth
+                    @if($comment->checkUserReaction('dislike'))
+                        active
+                    @endif
+                    @endauth'">
                     <i class="fas fa-long-arrow-alt-down"></i>
                     </a>
                 </div>

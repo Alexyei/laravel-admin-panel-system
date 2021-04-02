@@ -3,6 +3,13 @@ $(document).ready(function () {
     // console.log(commentCount);
     // $("a[data-reaction-type]").on('click', function () {
 
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
     // on навешивает обработчики даже на новые элементы, созданные с помощью AJAX
     $(document).on('click',"a[data-reaction-type]", function () {
         if ($(this).closest(".comment-header").hasClass("not-allowed")){
@@ -10,7 +17,7 @@ $(document).ready(function () {
             return false;
         }
 
-        let comment = $(this).data("commentId");
+        let commentId = $(this).data("commentId");
         let type = $(this).data("reactionType");
         if ($(this).hasClass("active"))
             type = "un" + type;
@@ -24,18 +31,20 @@ $(document).ready(function () {
         // return false;
         // if ([...comment].length > 5 && [...comment].length <= 10000) {
             $.ajax({
-                url: '/reaction/',
+                url: '/reaction',
                 method: 'POST',
                 dataType: 'text',
                 data: {
-                    comment: comment,
+                    commentId: commentId,
                     // isReply: isReply,
                     type: type
                 }, success: function (response) {
 
                     console.log('success reaction answer');
 
-                    json = jQuery.parseJSON(response);
+                    console.log(response);
+                    json = jQuery.parseJSON(response)
+                   // json = response.responseJSON;
 
                     clicked_button.toggleClass("active")
                     clicked_button.siblings(".active").removeClass("active");
@@ -43,10 +52,21 @@ $(document).ready(function () {
                     clicked_button.siblings(".reaction-down-count").text(json.dislike);
 
                 },
-                error: function (data) {
-                    // console.log(data);
-                    json = jQuery.parseJSON(data.responseText);
-                    modalAlertNotification(json.message,json.status);
+                error: function (result) {
+                     console.log(result);
+                    // json = jQuery.parseJSON(data.responseText);
+                    // modalAlertNotification(json.message,json.status);
+                    result = jQuery.parseJSON(result.responseText)
+                    console.log(result);
+                    console.log(result.status);
+                    // ошибки валидации
+                    if (result.errors)
+
+                        modalAlertNotification(Object.values(result.errors)[0][0],"error");
+                    else if (result.message)
+                        modalAlertNotification(result.message,result.status,result.redirect);
+                    else if (result.redirect)
+                        window.location.href = result.redirect;
                 }
             });
         // } else {
