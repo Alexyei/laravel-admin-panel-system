@@ -39,11 +39,11 @@ class Comment extends Model
 
     public function checkUserReactionExist()
     {
-        return $this->morphMany(Reaction::class, 'reactionable')->where('user_id',Auth::id())->orderBy('id','desc')->get();
+        return $this->morphMany(Reaction::class, 'reactionable')->where('user_id',Auth::id())->orderBy('id','desc')->first();
     }
 
     public function checkUserReaction($type)
     {
-        return $this->morphMany(Reaction::class, 'reactionable')->where('user_id',Auth::id())->where('type', $type)->orderBy('id','desc')->count();
+        return $this->morphMany(Reaction::class, 'reactionable')->where('user_id',Auth::id())->where('type', $type)->orderBy('id','desc')->first();
     }
 }

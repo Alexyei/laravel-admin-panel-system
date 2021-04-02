@@ -45,7 +45,7 @@
 {{--                    ' . ((isset($reaction) and $reaction === 'like') ? ' active' : '') . '--}}
                     <a href="#" data-reaction-type="like"  data-comment-id='{{ $comment['id'] }}' class="reaction-icon
                      '@auth
-                        @if($comment->checkUserReaction('like'))
+                        @if($comment->checkUserReaction('like') !== null)
                         active
                     @endif
                     @endauth'">
@@ -55,7 +55,7 @@
 {{--                    ' . ((isset($reaction) and $reaction === 'dislike') ? ' active' : '') . '--}}
                     <a href="#" data-reaction-type="dislike"  data-comment-id='{{ $comment['id'] }}' class="reaction-icon
                     '@auth
-                    @if($comment->checkUserReaction('dislike'))
+                    @if($comment->checkUserReaction('dislike') !== null)
                         active
                     @endif
                     @endauth'">

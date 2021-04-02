@@ -23,7 +23,11 @@ $(document).ready(function () {
             type = "un" + type;
         // console.log("reaction");
 
+
         let clicked_button = $(this);
+        clicked_button.toggleClass("active")
+        clicked_button.siblings(".active").removeClass("active");
+        console.log("TYPE:"+type);
 
         // console.log(comment);
         // console.log(type);
@@ -46,8 +50,7 @@ $(document).ready(function () {
                     json = jQuery.parseJSON(response)
                    // json = response.responseJSON;
 
-                    clicked_button.toggleClass("active")
-                    clicked_button.siblings(".active").removeClass("active");
+
                     clicked_button.siblings(".reaction-up-count").text(json.like);
                     clicked_button.siblings(".reaction-down-count").text(json.dislike);
 
