@@ -124,4 +124,8 @@ class CommentController extends Controller
 
 
     }
+
+    public function complaint(Request $request){
+
+    }
 }

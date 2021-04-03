@@ -69,6 +69,7 @@ Route::group(['middleware' => ['admin','optimizeImages'], 'prefix' => 'admin'], 
 Route::get('/post/{post}/{slug?}', [PostController::class,'show'])->name('post.show');
 Route::post('/comment/store', [CommentController::class,'store'])->name('comment.add')->middleware('auth');
 Route::post('/comment/reply', [CommentController::class,'replyStore'])->name('reply.add')->middleware('auth');
+Route::post('/comment/complaint', [CommentController::class,'complaint'])->name('comment.complaint')->middleware('auth');
 Route::post('/comment/delete', [CommentController::class,'delete'])->name('comment.delete')->middleware('admin');
 
 Route::post('/reaction', [ReactionController::class,'reaction'])->name('reaction')->middleware('auth');

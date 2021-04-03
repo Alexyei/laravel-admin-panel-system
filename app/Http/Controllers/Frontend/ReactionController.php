@@ -13,11 +13,11 @@ class ReactionController extends Controller
 {
     public function reaction(Request $request)
     {
-        $valid = ['like', 'unlike', 'dislike', 'undislike'];
+         $valid = ['like', 'unlike', 'dislike', 'undislike'];
 //       dd($request);
 
         $request->validate([
-            //       'type' => ['bail','required','in_array:valid.*'],
+            'type' => ['bail','required','in:'.implode(',', $valid),],
             'commentId' => ['bail', 'required', 'numeric'],
         ]);
 

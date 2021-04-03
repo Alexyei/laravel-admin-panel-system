@@ -46,4 +46,13 @@ class User extends Authenticatable
     protected $casts = [
 //        'email_verified_at' => 'datetime',
     ];
+
+    public function complaint(){
+        $this->belongsTo(DailyUserAction::class)->decrement('complaint_count');
+    }
+
+    public function dailyLimits()
+    {
+        return $this->belongsTo(DailyUserAction::class)->firstOrCreate();
+    }
 }

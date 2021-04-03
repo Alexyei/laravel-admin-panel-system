@@ -130,7 +130,7 @@
         <!--    <div class="modal-contents-comments">-->
 
 
-        <form class="modal-contents-comments" autocomplete="off" action="/comment/complain" method="post">
+        <form class="modal-contents-comments" autocomplete="off" action="{{route('comment.complaint')}}" method="post">
             <h1 class="title">Что-то не так с комментарием</h1>
             <a class="modal-close-comments"><i class="fas fa-times"></i></a>
 
@@ -171,7 +171,7 @@
                     <i class="fas fa-spinner fa-spin del"></i><span class="text">Отправить</span>
                 </button>
 {{--<?=$_SESSION['account']['comp_count']?>--}}
-                <p>У вас осталось <span class="complain-user-daily">5</span> предупреждений на сегодня</p>
+                <p>У вас осталось <span class="complain-user-daily">@if(\Illuminate\Support\Facades\Auth::check()) {{\Illuminate\Support\Facades\Auth::user()->dailyLimits->complaint_count}} @else 5 @endif</span> предупреждений на сегодня</p>
             </div>
         </form>
         <!---->
