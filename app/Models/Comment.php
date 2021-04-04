@@ -42,13 +42,14 @@ class Comment extends Model
         return $this->morphMany(Reaction::class, 'reactionable')->where('user_id',Auth::id())->orderBy('id','desc')->first();
     }
 
+
     public function checkUserReaction($type)
     {
         return $this->morphMany(Reaction::class, 'reactionable')->where('user_id',Auth::id())->where('type', $type)->orderBy('id','desc')->first();
     }
 
     public function checkComplaintExist($cause){
-        return $this->hasMany(Complaint::class)->where('cause', $cause)->where('user_id',Auth::id())->first();
+        return $this->hasMany(Complaint::class)->where('cause', $cause)->where('user_id',Auth::id())->first() !== null;
     }
 
     public function complaints(){

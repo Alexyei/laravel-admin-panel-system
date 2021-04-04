@@ -48,11 +48,22 @@ class User extends Authenticatable
     ];
 
     public function complaint(){
-        $this->belongsTo(DailyUserAction::class)->decrement('complaint_count');
+       // $this->belongsTo(DailyUserAction::class,'user_id')->decrement('complaints_count');
+        DailyUserAction::where('user_id',$this->original['id'])->decrement('complaints_count');
     }
 
     public function dailyLimits()
     {
-        return $this->belongsTo(DailyUserAction::class)->firstOrCreate();
+        //return $this->belongsTo(DailyUserAction::class, 'user_id')->firstOrCreate(['user_id' =>$this->original['id']]);
+       // return $this->hasOne(DailyUserAction::class, 'user_id');
+
+        $limits = DailyUserAction::where('user_id',$this->original['id'])->first();
+        if ($limits === null)
+        {
+            $limits = new DailyUserAction(['user_id' =>$this->original['id']]);
+            $limits->save();
+        }
+
+       return $limits;
     }
 }

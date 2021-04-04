@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
+use App\Models\Complaint;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Psy\Util\Json;
 
 class CommentController extends Controller
 {
@@ -126,6 +128,46 @@ class CommentController extends Controller
     }
 
     public function complaint(Request $request){
+       // dd($request);
+        $valid = ['spam','abuse','unfriendly','other'];
+        $request->validate([
+            'commentId' => ['bail','required','numeric'],
+            'cause' => ['bail','required','in:'.implode(',', $valid),],
+        ]);
 
+        $comment = Comment::find($request->commentId);
+
+        if(!$comment)
+            return response()->json([
+                'message' => 'Такого комментария не существует!',
+                'status' => 'error'
+            ], 400);
+
+        if ($comment->checkComplaintExist($request->cause))
+            return response()->json([
+                'message' => 'Такое предупреждение уже было отправлено!',
+                'status' => 'error'
+            ], 400);
+
+        if($request->user()->dailyLimits()->complaints_count > 0){
+            $complaint = new Complaint();
+            $complaint->user()->associate($request->user());
+            $complaint->comment()->associate($request->commentId);
+            $complaint->cause = $request->cause;
+            $complaint->save();
+            $complaint->user()->first()->complaint();
+
+            return response()->json([
+                'limit'=>$request->user()->dailyLimits()->complaints_count,
+                'message' => 'Предупреждение успешно отправлено!',
+                'status' => 'success'
+            ], 200);
+        }
+        else{
+            return response()->json([
+                'message' => 'Ваш дневной лимит предупреждений исчерпан!',
+                'status' => 'error'
+            ], 400);
+        }
     }
 }

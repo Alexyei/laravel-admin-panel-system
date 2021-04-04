@@ -200,7 +200,7 @@ $(document).ready(function () {
         // console.log(this);
         // console.log(new FormData(this));
         let data = new FormData(this);
-        data.append('comment', $(this).data("commentId"));
+        data.append('commentId', $(this).data("commentId"));
         // console.log($(this).data("commentId"));
         // console.log(data);
         // return false;
@@ -217,7 +217,7 @@ $(document).ready(function () {
             success: function (result) {
 
                 // console.log(result);
-                $('.bg-modal-comments form .complain-user-daily').text(result);
+                $('.bg-modal-comments form .complain-user-daily').text(result.limit);
                 modalAlertNotification("Предупреждение успешно отправлено!","success");
                 // json = jQuery.parseJSON(result);
                 // // где используеться json.url? в каких экшенах
@@ -230,10 +230,21 @@ $(document).ready(function () {
                 //         window.location.href = '/' + json.redirect;
                 // }
             },
-            error: function (data) {
+            error: function (result) {
             // console.log(data);
-            json = jQuery.parseJSON(data.responseText);
-                modalAlertNotification(json.message,json.status);
+            // json = jQuery.parseJSON(data.responseText);
+            //     modalAlertNotification(json.message,json.status);
+                result = jQuery.parseJSON(result.responseText)
+                console.log(result);
+                console.log(result.status);
+                // ошибки валидации
+                if (result.errors)
+
+                    modalAlertNotification(Object.values(result.errors)[0][0],"error");
+                else if (result.message)
+                    modalAlertNotification(result.message,result.status,result.redirect);
+                else if (result.redirect)
+                    window.location.href = result.redirect;
         }
         }).always(function(){
             btn.classList.toggle("load");

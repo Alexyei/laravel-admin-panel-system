@@ -171,7 +171,7 @@
                     <i class="fas fa-spinner fa-spin del"></i><span class="text">Отправить</span>
                 </button>
 {{--<?=$_SESSION['account']['comp_count']?>--}}
-                <p>У вас осталось <span class="complain-user-daily">@if(\Illuminate\Support\Facades\Auth::check()) {{\Illuminate\Support\Facades\Auth::user()->dailyLimits->complaint_count}} @else 5 @endif</span> предупреждений на сегодня</p>
+                <p>У вас осталось <span class="complain-user-daily">{{\Illuminate\Support\Facades\Auth::user()->dailyLimits()->complaints_count}}</span> предупреждений на сегодня</p>
             </div>
         </form>
         <!---->
