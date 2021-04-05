@@ -30,6 +30,24 @@ $(document).ready(function () {
         }
     });
 
+    function ajaxErrorHandler(result){
+        //console.log("handler");
+        //  console.log(result);
+        // json = jQuery.parseJSON(data.responseText);
+        // modalAlertNotification(json.message,json.status);
+        result = jQuery.parseJSON(result.responseText)
+        // console.log(result);
+        //  console.log(result.status);
+        // ошибки валидации
+        if (result.errors)
+
+            modalAlertNotification(Object.values(result.errors)[0][0],"error");
+        else if (result.message)
+            modalAlertNotification(result.message,result.status,result.redirect);
+        else if (result.redirect)
+            window.location.href = result.redirect;
+    }
+
     let commentCount = Number($('.comment-count').first().text())
     // console.log(commentCount);
     $("#addComment, #addReply").on('click', function () {
@@ -59,7 +77,7 @@ $(document).ready(function () {
                 }, success: function (response) {
 
                     console.log('success answer');
-                    // console.log(response);
+                    console.log(response);
                     // max++;
                     // $("#numComments").text(max + " Comments");
                     $('.comment-count').text(++commentCount);
@@ -85,18 +103,19 @@ $(document).ready(function () {
                 error: function (result) {
                     // json = jQuery.parseJSON(data.responseText);
                     // modalAlertNotification(json.message,json.status);
-
-                    result = result.responseJSON;
-                    console.log(result);
-                    console.log(result.status);
+                    //console.log(result.errors);
+                    //result = jQuery.parseJSON(result.responseText);
+                   // console.log(result);
+                    //console.log(result.status);
                     // ошибки валидации
-                    if (result.errors)
-
-                        modalAlertNotification(Object.values(result.errors)[0][0],"error");
-                    else if (result.message)
-                        modalAlertNotification(result.message,result.status,result.redirect);
-                    else if (result.redirect)
-                        window.location.href = result.redirect;
+                    // if (result.errors)
+                    //
+                    //     modalAlertNotification(Object.values(result.errors)[0][0],"error");
+                    // else if (result.message)
+                    //     modalAlertNotification(result.message,result.status,result.redirect);
+                    // else if (result.redirect)
+                    //     window.location.href = result.redirect;
+                    ajaxErrorHandler(result)
                 }
             });
         } else {
@@ -147,17 +166,18 @@ $(document).ready(function () {
             error: function (result) {
                 // json = jQuery.parseJSON(data.responseText);
                 // modalAlertNotification(json.message,json.status);
-                result = result.responseJSON;
-                console.log(result);
-                console.log(result.status);
+                // result = jQuery.parseJSON(result.responseText);
+                // console.log(result);
+                // console.log(result.status);
                 // ошибки валидации
-                if (result.errors)
-
-                    modalAlertNotification(Object.values(result.errors)[0][0],"error");
-                else if (result.message)
-                    modalAlertNotification(result.message,result.status,result.redirect);
-                else if (result.redirect)
-                    window.location.href = result.redirect;
+                // if (result.errors)
+                //
+                //     modalAlertNotification(Object.values(result.errors)[0][0],"error");
+                // else if (result.message)
+                //     modalAlertNotification(result.message,result.status,result.redirect);
+                // else if (result.redirect)
+                //     window.location.href = result.redirect;
+                ajaxErrorHandler(result);
             }
         });
         // } else {
@@ -231,20 +251,17 @@ $(document).ready(function () {
                 // }
             },
             error: function (result) {
-            // console.log(data);
-            // json = jQuery.parseJSON(data.responseText);
-            //     modalAlertNotification(json.message,json.status);
-                result = jQuery.parseJSON(result.responseText)
-                console.log(result);
-                console.log(result.status);
-                // ошибки валидации
-                if (result.errors)
 
-                    modalAlertNotification(Object.values(result.errors)[0][0],"error");
-                else if (result.message)
-                    modalAlertNotification(result.message,result.status,result.redirect);
-                else if (result.redirect)
-                    window.location.href = result.redirect;
+                // result = jQuery.parseJSON(result.responseText)
+                //
+                // if (result.errors)
+                //
+                //     modalAlertNotification(Object.values(result.errors)[0][0],"error");
+                // else if (result.message)
+                //     modalAlertNotification(result.message,result.status,result.redirect);
+                // else if (result.redirect)
+                //     window.location.href = result.redirect;
+                ajaxErrorHandler(result);
         }
         }).always(function(){
             btn.classList.toggle("load");

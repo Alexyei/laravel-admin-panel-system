@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14c9e101-c5da-4aa0-b50b-ac5a6b2808a3" name="Default Changelist" comment="">
+    <list default="true" id="14c9e101-c5da-4aa0-b50b-ac5a6b2808a3" name="Default Changelist" comment="validation ajax err">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Complaint.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Complaint.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/DailyUserAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DailyUserAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ReactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ReactionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/frontend/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/frontend/comments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/frontend/reactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/frontend/reactions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +225,8 @@
       <workItem from="1617349358984" duration="8073000" />
       <workItem from="1617367918029" duration="2462000" />
       <workItem from="1617431624520" duration="3237000" />
-      <workItem from="1617518062249" duration="5979000" />
+      <workItem from="1617518062249" duration="6295000" />
+      <workItem from="1617606858092" duration="3170000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1616001842689</created>
@@ -412,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617435157811</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="complaint 2">
+      <created>1617524385386</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1617524385386</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +450,8 @@
     <MESSAGE value="reactions" />
     <MESSAGE value="reactions 2" />
     <MESSAGE value="complaint 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="complaint 1" />
+    <MESSAGE value="complaint 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="complaint 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -494,6 +500,11 @@
           <url>file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php</url>
           <line>4</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/Frontend/CommentController.php</url>
+          <line>31</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/scripts/backend/dashboard.js</url>

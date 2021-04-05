@@ -7,20 +7,25 @@ use App\Models\Comment;
 use App\Models\Reaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Validator;
 use function PHPUnit\Framework\isEmpty;
 
 class ReactionController extends Controller
 {
     public function reaction(Request $request)
     {
+
          $valid = ['like', 'unlike', 'dislike', 'undislike'];
 //       dd($request);
 
-        $request->validate([
+        $validator = Validator::make($request->all(),[
             'type' => ['bail','required','in:'.implode(',', $valid),],
             'commentId' => ['bail', 'required', 'numeric'],
         ]);
-
+        if ($validator->fails())  {
+            return Response::json(array("errors" => $validator->getMessageBag()->toArray()), 422);
+        }
 
         $comment = Comment::find($request->commentId);
         $type = $request->type;

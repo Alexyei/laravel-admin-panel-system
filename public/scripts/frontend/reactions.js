@@ -3,6 +3,23 @@ $(document).ready(function () {
     // console.log(commentCount);
     // $("a[data-reaction-type]").on('click', function () {
 
+    function ajaxErrorHandler(result){
+        //console.log("handler");
+        //  console.log(result);
+        // json = jQuery.parseJSON(data.responseText);
+        // modalAlertNotification(json.message,json.status);
+        result = jQuery.parseJSON(result.responseText)
+        // console.log(result);
+        //  console.log(result.status);
+        // ошибки валидации
+        if (result.errors)
+
+            modalAlertNotification(Object.values(result.errors)[0][0],"error");
+        else if (result.message)
+            modalAlertNotification(result.message,result.status,result.redirect);
+        else if (result.redirect)
+            window.location.href = result.redirect;
+    }
 
     $.ajaxSetup({
         headers: {
@@ -25,9 +42,7 @@ $(document).ready(function () {
 
 
         let clicked_button = $(this);
-        clicked_button.toggleClass("active")
-        clicked_button.siblings(".active").removeClass("active");
-        console.log("TYPE:"+type);
+
 
         // console.log(comment);
         // console.log(type);
@@ -49,27 +64,16 @@ $(document).ready(function () {
                     console.log(response);
                     json = jQuery.parseJSON(response)
                    // json = response.responseJSON;
-
+                    clicked_button.toggleClass("active")
+                    clicked_button.siblings(".active").removeClass("active");
+                    console.log("TYPE:"+type);
 
                     clicked_button.siblings(".reaction-up-count").text(json.like);
                     clicked_button.siblings(".reaction-down-count").text(json.dislike);
 
                 },
                 error: function (result) {
-                     console.log(result);
-                    // json = jQuery.parseJSON(data.responseText);
-                    // modalAlertNotification(json.message,json.status);
-                    result = jQuery.parseJSON(result.responseText)
-                    console.log(result);
-                    console.log(result.status);
-                    // ошибки валидации
-                    if (result.errors)
-
-                        modalAlertNotification(Object.values(result.errors)[0][0],"error");
-                    else if (result.message)
-                        modalAlertNotification(result.message,result.status,result.redirect);
-                    else if (result.redirect)
-                        window.location.href = result.redirect;
+                   ajaxErrorHandler(result);
                 }
             });
         // } else {

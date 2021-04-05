@@ -7,6 +7,8 @@ use App\Models\Comment;
 use App\Models\Complaint;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Validator;
 use Psy\Util\Json;
 
 class CommentController extends Controller
@@ -15,11 +17,16 @@ class CommentController extends Controller
     {
 //        dd($request);
 
-        $request->validate([
-            'comment' => ['bail','required','min:5','max:10000'],
-            'postId' => ['bail','required','numeric'],
-            'parentId' => ['bail','required','numeric'],
+
+        $validator = Validator::make($request->all(),[
+            'comment' => ['required','min:5','max:10000'],
+            'postId' => ['required','numeric'],
+            'parentId' => ['required','numeric'],
         ]);
+        if ($validator->fails())  {
+            return Response::json(array("errors" => $validator->getMessageBag()->toArray()), 422);
+        }
+
 
 
         if ($request->postId === 0)
@@ -59,11 +66,14 @@ class CommentController extends Controller
     public function replyStore(Request $request)
     {
 
-        $request->validate([
+        $validator = Validator::make($request->all(),[
             'comment' => ['bail','required','min:5','max:10000'],
             'postId' => ['bail','required','numeric'],
             'parentId' => ['bail','required','numeric'],
         ]);
+        if ($validator->fails())  {
+            return Response::json(array("errors" => $validator->getMessageBag()->toArray()), 422);
+        }
 
 
         if ($request->postId === 0)
@@ -106,9 +116,13 @@ class CommentController extends Controller
 
     public function delete(Request $request)
     {
-        $request->validate([
+
+        $validator = Validator::make($request->all(),[
             'commentId' => ['bail','required','numeric'],
         ]);
+        if ($validator->fails())  {
+            return Response::json(array("errors" => $validator->getMessageBag()->toArray()), 422);
+        }
 
         $comment = Comment::find($request->commentId);
 
@@ -130,11 +144,13 @@ class CommentController extends Controller
     public function complaint(Request $request){
        // dd($request);
         $valid = ['spam','abuse','unfriendly','other'];
-        $request->validate([
+        $validator = Validator::make($request->all(),[
             'commentId' => ['bail','required','numeric'],
             'cause' => ['bail','required','in:'.implode(',', $valid),],
         ]);
-
+        if ($validator->fails())  {
+            return Response::json(array("errors" => $validator->getMessageBag()->toArray()), 422);
+        }
         $comment = Comment::find($request->commentId);
 
         if(!$comment)
