@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\DailyUserAction;
 use App\Models\ResetPassword;
 use App\Models\VerifyCabinet;
 use App\Models\VerifyUser;
@@ -42,6 +43,8 @@ class DeleteTempRecords extends Command
      */
     public function handle()
     {
+        DailyUserAction::where('created_at', '<=', now()->subDay())->delete();
+
         VerifyUser::where('created_at', '<=', now()->subDay())->delete();
         ResetPassword::where('created_at', '<=', now()->subDay())->delete();
         VerifyCabinet::where('created_at', '<=', now()->subDay())->delete();

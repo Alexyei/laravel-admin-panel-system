@@ -30,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //setlocale(LC_TIME, "russian");
+        $locale ='ru';
+        $locale_CODE ='ru_RU';
+        setlocale(LC_ALL, $locale . '.utf-8', $locale_CODE . '.utf-8', $locale, $locale_CODE);
         Paginator::useBootstrap();
 
         View::composer(['backend.post.create','backend.post.edit'], TagComposer::class);
