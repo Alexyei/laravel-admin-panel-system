@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Http\View\Composers\CategoriesWithCountComposer;
 use App\Http\View\Composers\CategoryComposer;
 use App\Http\View\Composers\TagComposer;
+use App\Http\View\Composers\TagsWithCountComposer;
 use App\Models\Category;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
@@ -38,6 +40,9 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer(['backend.post.create','backend.post.edit'], TagComposer::class);
         View::composer(['backend.post.create','backend.post.edit'], CategoryComposer::class);
+
+        View::composer(['frontend.main','frontend.post'], CategoriesWithCountComposer::class);
+        View::composer(['frontend.main','frontend.post'], TagsWithCountComposer::class);
 
         Blade::if('admin', function () {
             return Auth::check() && Auth::user()->role==='admin';

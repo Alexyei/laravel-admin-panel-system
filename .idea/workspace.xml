@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14c9e101-c5da-4aa0-b50b-ac5a6b2808a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/validation-inline.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/validation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/View/Composers/CategoriesWithCountComposer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/View/Composers/TagsWithCountComposer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/DeleteTempRecords.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/DeleteTempRecords.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +232,8 @@
       <workItem from="1617431624520" duration="3237000" />
       <workItem from="1617518062249" duration="6295000" />
       <workItem from="1617606858092" duration="3263000" />
-      <workItem from="1617690834249" duration="2708000" />
+      <workItem from="1617690834249" duration="2751000" />
+      <workItem from="1617776226448" duration="2141000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1616001842689</created>
@@ -431,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617610116569</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="locale command daily complaint">
+      <created>1617693590162</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1617693590162</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,7 +447,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="first test register" />
     <MESSAGE value="second test register" />
     <MESSAGE value="3 test register" />
     <MESSAGE value="reset password" />
@@ -465,7 +471,8 @@
     <MESSAGE value="complaint 1" />
     <MESSAGE value="complaint 2" />
     <MESSAGE value="validation ajax error handler" />
-    <option name="LAST_COMMIT_MESSAGE" value="validation ajax error handler" />
+    <MESSAGE value="locale command daily complaint" />
+    <option name="LAST_COMMIT_MESSAGE" value="locale command daily complaint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -35,7 +35,7 @@ Route::get('/',
 
 //Route::get('/post/{post}/{slug}', [MainController::class,'save'])->name('post');
 
-//Route::get('/test', [LoginController::class,'test'])->name('test');
+Route::get('/test', [LoginController::class,'test'])->name('test');
 
 //авторизация
 Route::get('/enter/{user:login?}', [LoginController::class,'enter'])->name('enter');

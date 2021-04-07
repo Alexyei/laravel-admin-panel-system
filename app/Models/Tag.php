@@ -38,4 +38,8 @@ class Tag extends Model
      */
     protected $casts = [
     ];
+
+    public function posts(){
+        return $this->belongsToMany(Post::class,'post_tag');
+    }
 }

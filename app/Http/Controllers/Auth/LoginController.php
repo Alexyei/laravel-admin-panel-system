@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;;
 
+use App\Models\Category;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -45,5 +47,14 @@ class LoginController extends Controller
         return redirect()->back();
     }
 
+    public function test(){
+        $categories = Tag::withCount('posts')->orderBy('posts_count','desc')->take(2)->get();
+
+        foreach ($categories as $cat) {
+            echo $cat->name;
+            echo $cat->posts_count;
+            echo "<hr>";
+        }
+    }
 
 }
